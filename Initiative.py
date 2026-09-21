@@ -4,15 +4,16 @@ import tkinter as tk
 import keyboard
 import time
 
+#screen setup
 root = tk.Tk()
 root.attributes('-fullscreen', True)
 root.bind_all("<Escape>",lambda e: root.destroy())
 root.geometry(f"{root.winfo_screenwidth()}x{root.winfo_screenheight()}+0+0")
 root.configure(bg='black')
 
-setup_mode = True
+setup_mode = True #needed to ensure we are in setup mode to preserve classes
 
-global current_turn_player
+global current_turn_player 
 
 
 characters_to_assign = ["Shippo", "Poet", "Neva", "Heavy", "Noah", "Monster1", "Monster2", "Monster3", "Monster4", "Monster5"]
@@ -21,7 +22,7 @@ assignment_index = 0
 initiative_slots = {}
 current_turn_player = "Set slot for: Shippo"
 
-viewing_overviewe = False
+viewing_overview = False
 current_slot_index = 0
 
 round_marker = False
@@ -551,7 +552,7 @@ def t(event):
 
 #Keyboard logic 
 
-#root.bind_all("<Key>", key_press)
+
 for i in range(1,10):
     root.bind_all(str(i), assign_initiative_rank)
 root.bind_all('0', assign_initiative_rank)
